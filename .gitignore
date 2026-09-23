@@ -6,3 +6,8 @@ mysql-data/
 .vscode/
 citas-web/
 citas-api/
+
+# Archivos de credenciales/tokens: nunca versionar
+usu tok.txt
+*token*.txt
+*tok.txt
