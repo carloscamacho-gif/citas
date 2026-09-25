@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# Repo raiz (documentacion, prompts, scripts): solo escaneo de secretos.
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+echo "[pre-commit] escaneando secretos..."
+sh .githooks/secret-scan.sh
+echo "[pre-commit] OK"

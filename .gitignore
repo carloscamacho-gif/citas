@@ -11,3 +11,6 @@ citas-api/
 usu tok.txt
 *token*.txt
 *tok.txt
+
+# Estado del editor Obsidian (no versionar)
+.obsidian/
