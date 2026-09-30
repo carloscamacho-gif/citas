@@ -146,6 +146,23 @@ Guardar evidencia en un Markdown o JSON por ejecución, por ejemplo:
 - DoD de HU abordadas validada;
 - commit estable y, cuando el estudiante decida, merge `develop → main`.
 
+### Cierre S4 (ejecutado — 2026-09-30) ✅
+
+Alcance de S4 **completado y verificado**. Cada vertical se construyó con ciclo Builder/Verifier (pruebas + e2e de API contra MySQL + e2e de navegador) y quedó registrado en `citas-api/docs/wiki/loops/`; la trazabilidad consolidada está en `citas-api/docs/wiki/scrum/README.md` (sección "Trazabilidad — Sesión S4") y en el log `citas-api/docs/wiki/llm-wiki/wiki/log.md`.
+
+| Funcionalidad | HU | Loop | Estado |
+|---|---|---|---|
+| Mis citas + cancelación | HU-017, HU-018 | `LOOP-propio-mis-citas-cancelacion` (propio) | `Completada` |
+| Reprogramación + bandeja ADMIN | HU-019, HU-023 | `LOOP_02-reprogramacion` (guiado) | `Completada` |
+| Agenda del profesional | HU-020 | `LOOP-HU-020-agenda-profesional` | `Completada` |
+| Cerrar atención (COMPLETED/NO_SHOW) | HU-021 | `LOOP-HU-021-cerrar-atencion` | `Completada` |
+| CRUD de EPS y planes | HU-007, HU-008 | `LOOP-HU-007-008-eps-planes` | `Completada` |
+| Recuperación de contraseña (sin SMTP) | HU-003 | `LOOP-HU-003-recuperar-contrasena` | `Completada` |
+
+- **Loops**: se ejecutó el guiado `LOOP_02` (reprogramación) y varios loops propios; cada iteración guardó su evidencia JSON (Builder/Verifier, backendTests, frontendBuild, result).
+- **Verificación**: backend en **143 pruebas unitarias en verde**; migraciones Flyway **V1–V11** (S4 añadió V9 reschedule, V10 origen `PROFESSIONAL`, V11 password reset). Frontend con lint (tsc) + pruebas + build en verde. El historial de estados (HU-024) y la bandeja de especializadas (HU-022) ya estaban cubiertos desde S3.
+- **Commits S4 (pusheados en `develop`)**: `citas-api` `af7bf4e → 98fdcaf → 923132b → 95466de → 1bdc74a → 8ea9310 → 6a9d228`; `citas-web` `5bd8f76 → 27f8564 → 3d1ea4b → 66fc424 → d7d02ec → 9e31a3b`. Merge `develop → main` queda a decisión del estudiante.
+
 ### Commit sugerido
 `feat(s4): complete appointment lifecycle with autonomous verification loops`
 
